@@ -245,7 +245,7 @@ export default function HomePage() {
                 CREATE?
               </h2>
               <p className="text-lg md:text-xl text-muted-foreground mb-8">
-                Join thousands using MarvelEdge for professional screen recording
+                Join thousands using SCREEZY for professional screen recording
               </p>
               <Link href="/record">
                 <BrutalistButton size="lg">
@@ -262,7 +262,7 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
-              <h3 className="text-2xl font-bold uppercase tracking-tighter mb-4">MARVELEDGE</h3>
+              <h3 className="text-2xl font-bold uppercase tracking-tighter mb-4">SCREEZY</h3>
               <p className="text-sm uppercase tracking-wider">SCREEN RECORDING STUDIO</p>
             </div>
             <div>
@@ -284,7 +284,7 @@ export default function HomePage() {
           </div>
           <div className="border-t-2 border-accent-foreground/20 pt-8 text-center">
             <p className="text-sm uppercase tracking-wider">
-              © 2025 MARVELEDGE. KINETIC TYPOGRAPHY DESIGN.
+              © 2025 SCREEZY. KINETIC TYPOGRAPHY DESIGN.
             </p>
           </div>
         </div>

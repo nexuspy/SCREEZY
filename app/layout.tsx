@@ -10,7 +10,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "MarvelEdge - Screen Recording Studio",
+  title: "SCREEZY - Screen Recording Studio",
   description: "Record, trim, and share screen recordings instantly in your browser",
 };
 

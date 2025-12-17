@@ -21,7 +21,7 @@ function getDb() {
         fs.mkdirSync(dataDir, { recursive: true });
     }
 
-    const dbPath = path.join(dataDir, 'marveledge.db');
+    const dbPath = path.join(dataDir, 'screezy.db');
     db = new Database(dbPath);
     (global as any).db = db;
 

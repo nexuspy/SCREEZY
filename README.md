@@ -1,4 +1,4 @@
-# MarvelEdge - Screen Recording Studio
+# SCREEZY - Screen Recording Studio
 
 A brutalist, kinetic typography-driven screen recording web application built with Next.js 15, featuring in-browser recording, FFmpeg.wasm video trimming, and analytics tracking.
 
@@ -29,7 +29,7 @@ A brutalist, kinetic typography-driven screen recording web application built wi
 ```bash
 # Clone the repository
 git clone <your-repo-url>
-cd marveledge
+cd screezy
 
 # Install dependencies
 npm install
@@ -54,7 +54,7 @@ All dependencies are included in `package.json`:
 ## 📁 Project Structure
 
 ```
-marveledge/
+screezy/
 ├── app/                          # Next.js 15 App Router
 │   ├── page.tsx                  # Homepage (full kinetic treatment)
 │   ├── record/page.tsx           # Screen recording page
@@ -92,7 +92,7 @@ marveledge/
 │   └── utils.ts                  # Helpers (cn, etc.)
 │
 ├── public/uploads/               # Video file storage
-└── data/marveledge.db           # SQLite analytics database
+└── data/screezy.db              # SQLite analytics database
 ```
 
 ---
@@ -217,7 +217,7 @@ export async function uploadToR2(file: Buffer, filename: string) {
     ContentType: "video/webm",
   }));
 
-  return `https://cdn.marveledge.com/${filename}`;
+  return `https://cdn.screezy.com/${filename}`;
 }
 ```
 
@@ -596,7 +596,7 @@ npm i -g vercel
 vercel --prod
 
 # Environment variables to set:
-NEXT_PUBLIC_BASE_URL=https://marveledge.com
+NEXT_PUBLIC_BASE_URL=https://screezy.com
 R2_ENDPOINT=https://...r2.cloudflarestorage.com
 R2_ACCESS_KEY_ID=***
 R2_SECRET_ACCESS_KEY=***
@@ -630,7 +630,7 @@ MIT License - See LICENSE file
 
 For issues or questions:
 - GitHub Issues: [your-repo]/issues
-- Email: support@marveledge.com
+- Email: support@screezy.com
 - Discord: [community-invite-link]
 
 ---
