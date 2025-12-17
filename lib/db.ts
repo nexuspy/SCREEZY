@@ -1,3 +1,12 @@
+import Database from 'better-sqlite3';
+import path from 'path';
+import fs from 'fs';
+
+// Extend global namespace to include db property
+declare global {
+    var db: Database.Database | undefined;
+}
+
 // Mock database for build-time to avoid better-sqlite3 initialization
 const isBuildTime = typeof window === 'undefined' && process.env.NODE_ENV === 'production' && !global.db;
 
