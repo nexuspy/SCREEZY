@@ -7,8 +7,9 @@ import { Eye, Clock } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
 
-export default async function WatchPage({ params }: { params: { token: string } }) {
-    const video = videoDb.getByToken(params.token);
+export default async function WatchPage({ params }: { params: Promise<{ token: string }> }) {
+    const { token } = await params;
+    const video = videoDb.getByToken(token);
 
     if (!video) {
         notFound();
@@ -70,14 +71,14 @@ export default async function WatchPage({ params }: { params: { token: string } 
                         <div className="flex gap-2">
                             <input
                                 type="text"
-                                value={`${typeof window !== 'undefined' ? window.location.origin : ''}/watch/${params.token}`}
+                                value={`${typeof window !== 'undefined' ? window.location.origin : ''}/watch/${token}`}
                                 readOnly
                                 className="flex-1 px-3 py-2 border rounded-md bg-gray-50 text-sm"
                             />
                             <button
                                 onClick={() => {
                                     navigator.clipboard.writeText(
-                                        `${window.location.origin}/watch/${params.token}`
+                                        `${window.location.origin}/watch/${token}`
                                     );
                                 }}
                                 className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"

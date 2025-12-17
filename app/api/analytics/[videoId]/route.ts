@@ -3,10 +3,11 @@ import { analyticsDb } from '@/lib/db';
 
 export async function GET(
     request: NextRequest,
-    { params }: { params: { videoId: string } }
+    { params }: { params: Promise<{ videoId: string }> }
 ) {
     try {
-        const videoId = parseInt(params.videoId);
+        const { videoId: videoIdParam } = await params;
+        const videoId = parseInt(videoIdParam);
 
         if (isNaN(videoId)) {
             return NextResponse.json(
