@@ -81,11 +81,18 @@ export const ffmpegUtils = {
         // Read output file
         const data = await ffmpeg.readFile(outputName);
 
+        // Convert FileData (Uint8Array<ArrayBufferLike>) to standard Uint8Array
+        const uint8Array = new Uint8Array(data as Uint8Array);
+
+        // Create blob with proper MIME type
+        const mimeType = outputFormat === 'mp4' ? 'video/mp4' : 'video/webm';
+        const outputBlob = new Blob([uint8Array], { type: mimeType });
+
         // Clean up
         await ffmpeg.deleteFile(inputName);
         await ffmpeg.deleteFile(outputName);
 
-        return new Blob([data], { type: `video/${outputFormat}` });
+        return outputBlob;
     },
 
     /**
